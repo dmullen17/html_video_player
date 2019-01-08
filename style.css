@@ -1,0 +1,33 @@
+.player__controls {
+    background-color: black;
+}
+
+.progress {
+    height: 10px; 
+    width: 100%; 
+    background-color: rgba(0, 0, 0, .25);
+}
+
+.progress__filled {
+    height: 10px;
+    width: 0%;
+    background-color: gold;
+    transition: all .5s linear; 
+}
+
+.player__button {
+    background: none;
+    border: 0;
+    color: white;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    cursor: crosshair;
+    max-width: 50px;
+}
+
+.player__button:focus {
+    /*border: 5px solid red;*/
+    border: 1px solid #ffc600;
+    outline: none;
+}
