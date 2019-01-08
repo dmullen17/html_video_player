@@ -1,18 +1,48 @@
+body {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #7c1599 0%,#921099 48%,#7e4ae8 100%);
+
+}
+
+.player {
+    position: relative;
+}
+
 .player__controls {
-    background-color: black;
+    background-color: rgba(0, 0, 0, .1);
+    position: absolute; 
+    width: 100%;
+    bottom: 0;
+    transform: translateY(100%) translateY(-5px);
+    transition: transform .3s linear;
+}
+
+.player:hover .player__controls{
+    transform: translateY(0) translateY(-10px);
 }
 
 .progress {
     height: 10px; 
     width: 100%; 
-    background-color: rgba(0, 0, 0, .25);
+    background-color: rgba(0, 0, 0, .05);
 }
 
 .progress__filled {
     height: 10px;
     width: 0%;
+    border: 0;
     background-color: gold;
-    transition: all .5s linear; 
+    transition: all .05s linear; 
+}
+
+.buttons {
+    display: flex; 
+    flex-wrap: nowrap;
 }
 
 .player__button {
@@ -23,11 +53,73 @@
     margin: 0;
     text-align: center;
     cursor: crosshair;
-    max-width: 50px;
+    width: 100px;
 }
 
 .player__button:focus {
     /*border: 5px solid red;*/
     border: 1px solid #ffc600;
     outline: none;
+}
+
+.toggleButton {
+    width: 50px;
+}
+
+
+/* unholy css to style input type="range" */
+
+input[type=range] {
+  -webkit-appearance: none;
+  background: transparent;
+  width: 100%;
+  margin: 0 5px;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0 0 1px rgba(13, 13, 13, 0);
+  background: rgba(255,255,255,0.8);
+  border-radius: 1.3px;
+  border: 0.2px solid rgba(1, 1, 1, 0);
+}
+
+input[type=range]::-webkit-slider-thumb {
+  height: 15px;
+  width: 15px;
+  border-radius: 50px;
+  background: #ffc600;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -3.5px;
+  box-shadow:0 0 2px rgba(0,0,0,0.2);
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #bada55;
+}
+
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0 0 1px rgba(13, 13, 13, 0);
+  background: #ffffff;
+  border-radius: 1.3px;
+  border: 0.2px solid rgba(1, 1, 1, 0);
+}
+
+input[type=range]::-moz-range-thumb {
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(13, 13, 13, 0);
+  height: 15px;
+  width: 15px;
+  border-radius: 50px;
+  background: #ffc600;
+  cursor: pointer;
 }
